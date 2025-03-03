@@ -1,0 +1,76 @@
+@{
+    ViewData["Title"] = "Kontakt";
+
+    <link rel="stylesheet" href="~/css/contactPage.css" asp-append-version="true" />
+}
+
+<section id="contact" class="container mt-5">
+    <h2 class="text-center mb-4">Kontakta mig</h2>
+    
+    <!-- Introduktion -->
+    <div class="row text-center mb-5">
+        <div class="col-12">
+            <p class="lead">Jag älskar att höra från nya människor! Tveka inte att kontakta mig via något av de alternativ nedan.</p>
+        </div>
+    </div>
+
+    <!-- Kontaktmetoder -->
+    <div class="row justify-content-center">
+        <!-- Telefon -->
+        <div class="col-md-3 mb-4">
+            <div class="card text-center p-4 shadow-lg contact-card">
+                <i class="bi bi-telephone-fill fs-1 text-primary mb-3"></i>
+                <h4>Telefon</h4>
+                <a class="fs-5 text-decoration-none">+46 331 718 35</a>
+            </div>
+        </div>
+
+        <!-- E-post -->
+        <div class="col-md-3 mb-4">
+            <div class="card text-center p-4 shadow-lg contact-card">
+                <i class="bi bi-envelope-fill fs-1 text-primary mb-3"></i>
+                <h4>E-post</h4>
+                <a href="mailto:melvin@bubini.com" class="fs-5">melvin@bubini.com</a>
+            </div>
+        </div>
+
+        <!-- Sociala medier -->
+        <div class="col-md-3 mb-4">
+            <div class="card text-center p-4 shadow-lg contact-card">
+                <i class="bi bi-facebook fs-1 text-primary mb-3"></i>
+                <h4>Instagram</h4>
+                <a href="https://www.instagram.com/bubinimelvin/" class="fs-5">Klicka här</a>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card text-center p-4 shadow-lg contact-card">
+                <i class="bi bi-linkedin fs-1 text-primary mb-3"></i>
+                <h4>LinkedIn</h4>
+                <a href="https://www.linkedin.com/in/melvin-bubini-867082229/" class="fs-5">Klicka här</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kontaktformulär -->
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h4 class="text-center mb-3">Skicka ett meddelande</h4>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Ditt namn</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Din e-postadress</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Ditt meddelande</label>
+                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Skicka</button>
+            </form>
+        </div>
+    </div>
+</section>
