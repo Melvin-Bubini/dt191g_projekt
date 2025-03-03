@@ -1,0 +1,48 @@
+# ASP.NET Core
+bin/
+obj/
+.vscode/
+*.user
+*.suo
+*.vsp
+*.vspscc
+*.vssscc
+*.sln.cache
+*.ncb
+*.log
+*.tlog
+*.pdb
+*.TestResults/
+.env
+
+# Secrets & Configs
+appsettings.Development.json
+appsettings.Local.json
+appsettings.Production.json
+secrets.json
+
+# Build files
+*.dll
+*.exe
+*.out
+*.log
+*.lock
+*.cache
+*.config
+*.pdb
+*.manifest
+*.csproj.user
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# NuGet Packages
+packages/
+*.nupkg
+project.lock.json
+artifacts/
+
+# Logs
+logs/
+*.log
