@@ -1,8 +1,122 @@
 ﻿@{
     ViewData["Title"] = "Startsida";
+
+    <link rel="stylesheet" href="~/css/startPage.css" asp-append-version="true" />
+    <script src="~/js/startPage.js" asp-append-version="true"></script>
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+    <div class="row align-items-center">
+        <!-- Bildsektion -->
+        <div class="col-md-4 text-center">
+            <img src="~/pictures/profilePicture.jpg" alt="Profilbild" class="img-fluid rounded-circle shadow-lg" width="250">
+        </div>
+
+        <!-- Introduktionstext -->
+        <div class="col-md-8">
+            <h1 class="display-4 fade-in">Vem är jag?</h1>
+            <p class="lead fade-in delay-1s">
+                Jag är social, service-driven och positiv, alltid strävandes efter personlig utveckling.
+                Engagemang och disciplin är något jag värderar högt och ser som en fördel inom webbutveckling.
+            </p>
+            <p class="fade-in delay-2s">
+                Från min utbildning har jag byggt en stark teknisk grund och lärt mig att arbeta effektivt i team.
+                Jag har goda kunskaper inom webbutveckling och lär mig snabbt nya teknologier och arbetsmetoder.
+            </p>
+            <p class="fade-in delay-3s">
+                Genom min bakgrund som elit-handbollsspelare har jag utvecklat starka ledaregenskaper och en förmåga att prestera under press.
+                Jag tar gärna initiativ och driver projekt framåt, både självständigt och i samarbete med andra.
+            </p>
+        </div>
+    </div>
+
+    <!-- Sektion: Utbildning med kort -->
+    <section class="mt-5">
+        <h2 class="text-center mb-4 fade-in">Utbildning</h2>
+        <div class="row text-center">
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm card-hover zoom-effect">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-center mb-3">
+                            <i class="bi bi-university fs-2 text-primary"></i>
+                        </div>
+                        <h4 class="card-title">Mittuniversitetet</h4>
+                        <strong class="text-muted">2023 - Nu</strong>
+                        <p class="card-text mt-2">Högskoleexamen med inriktning mot datateknik.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm card-hover zoom-effect">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-center mb-3">
+                            <i class="bi bi-gear fs-2 text-primary"></i>
+                        </div>
+                        <h4 class="card-title">Linköpings Universitet</h4>
+                        <strong class="text-muted">Sommarkurs 2024</strong>
+                        <p class="card-text mt-2">Grunderna i AI.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm card-hover zoom-effect">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-center mb-3">
+                            <i class="bi bi-book fs-2 text-primary"></i>
+                        </div>
+                        <h4 class="card-title">Sjölins Gymnasium Södermalm</h4>
+                        <strong class="text-muted">2019 – 2022</strong>
+                        <p class="card-text mt-2">Samhällsvetenskap inriktning beteendevetenskap med Nationell idrottsutbildning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sektion: Arbetslivserfarenhet i tidslinjeformat -->
+    <section class="mt-5">
+        <h2 class="text-center mb-4 fade-in">Arbetslivserfarenhet</h2>
+        <div class="timeline">
+            <div class="timeline-item fade-in delay-1s">
+                <div class="timeline-content">
+                    <h4>Barnskötare</h4>
+                    <p>Lillsjöskolan</p>
+                    <strong>2024 - Nu</strong>
+                    <p>-Tar hand om barn i skolan</p>
+                    <p>- Hjälper till att leda lektioner</p>
+                </div>
+            </div>
+            <div class="timeline-item fade-in delay-2s">
+                <div class="timeline-content">
+                    <h4>Vaktmästare</h4>
+                    <p>Rocklunda fastigheter</p>
+                    <strong>Sommarjobb 2024</strong>
+                    <p>- Skötsel av arenor och fotbollsplaner på rocklunda</p>
+                    <p>- Bemötande av besökare och kunder</p>
+                </div>
+            </div>
+            <div class="timeline-item fade-in delay-3s">
+                <div class="timeline-content">
+                    <h4>Leveranspersonal</h4>
+                    <p>Nordic Green Design</p>
+                    <strong>2022 - 2023</strong>
+                    <p>- Levererade växtinredning till företag</p>
+                    <p>- Hjälpte till att lösa problem med montering</p>
+                    <p>- Sålde ny inredning till företag</p>
+                </div>
+            </div>
+            <div class="timeline-item fade-in delay-4s">
+                <div class="timeline-content">
+                    <h4>Receptionist</h4>
+                    <p>Popup Padel & Gym</p>
+                    <strong>2018 - 2022</strong>
+                    <p>- Handskades personligen kundkontakt</p>
+                    <p>- Hanterade sälj av material</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </div>
