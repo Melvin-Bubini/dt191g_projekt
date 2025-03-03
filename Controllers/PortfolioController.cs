@@ -11,7 +11,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace dt191g_projekt.Controllers
 {
-    [Authorize]
     public class PortfolioController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -45,6 +44,7 @@ namespace dt191g_projekt.Controllers
             return View(portfolioModel);
         }
 
+        [Authorize]
         // GET: Portfolio/Create
         public IActionResult Create()
         {
@@ -54,6 +54,7 @@ namespace dt191g_projekt.Controllers
         // POST: Portfolio/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,Description,Competence,GithubLink,Url")] PortfolioModel portfolioModel)
@@ -67,6 +68,7 @@ namespace dt191g_projekt.Controllers
             return View(portfolioModel);
         }
 
+        [Authorize]
         // GET: Portfolio/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -86,6 +88,7 @@ namespace dt191g_projekt.Controllers
         // POST: Portfolio/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Competence,GithubLink,Url")] PortfolioModel portfolioModel)
@@ -119,6 +122,7 @@ namespace dt191g_projekt.Controllers
         }
 
         // GET: Portfolio/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -137,6 +141,7 @@ namespace dt191g_projekt.Controllers
         }
 
         // POST: Portfolio/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
