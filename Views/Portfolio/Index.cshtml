@@ -2,51 +2,43 @@
 
 @{
     ViewData["Title"] = "Portfölj";
+
+    <link rel="stylesheet" href="~/css/portfolioPage.css" asp-append-version="true" />
 }
 
-<h1>Projekt</h1>
+<h1 class="portfolio-title">Mina Projekt</h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Competence)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GithubLink)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Url)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Competence)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GithubLink)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Url)
-            </td>
-            @await Html.PartialAsync("_CrudPartial", item) 
-        </tr>
-}
-    </tbody>
-</table>
+<div class="portfolio-grid">
+    @foreach (var item in Model)
+    {
+        <div class="portfolio-card">
+            <div class="card-content">
+                <h2 class="card-title">@item.Title</h2>
+                <p class="card-description">@item.Description</p>
+                <p class="card-competence"><strong>Kompetenser lärda:</strong> @item.Competence</p>
+                <div class="card-links">
+                    @if (!string.IsNullOrEmpty(item.GithubLink))
+                    {
+                        <a href="@item.GithubLink" class="btn github-btn" target="_blank">GitHub</a>
+                    }
+                    @if (!string.IsNullOrEmpty(item.Url))
+                    {
+                        <a href="@item.Url" class="btn live-demo-btn" target="_blank">Live Demo</a>
+                    }
+                </div>
+                <div class="crud-container">
+                    @await Html.PartialAsync("_CrudPartial", item) 
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.portfolio-card');
+        cards.forEach((card, index) => {
+            card.style.setProperty('--index', index);
+        });
+    });
+</script>

@@ -1,3 +1,8 @@
 .row {
     justify-content: center;
 }
+
+input::placeholder {
+    color: #888; /* Välj en färg som gör den tydlig, t.ex. en grå nyans */
+    opacity: 1;  /* Se till att texten inte är för transparent */
+}

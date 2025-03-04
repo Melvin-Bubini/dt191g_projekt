@@ -1,6 +1,17 @@
-/* Grundinställningar */
+
+h1 {
+    background: linear-gradient(358deg, #512bd4 20%, #d600aa 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}
+
 .card {
     border-radius: 15px;
+    background: #222;
+    box-shadow: 8px 7px 11px 0px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 

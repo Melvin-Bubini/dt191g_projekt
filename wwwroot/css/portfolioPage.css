@@ -1,0 +1,128 @@
+.portfolio-title {
+    text-align: center;
+    background: linear-gradient(358deg, #512bd4 20%, #d600aa 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+/* Grid-layout för projekten */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Kortdesign */
+.portfolio-card {
+    background: #222;
+    border-radius: 15px;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 8px 7px 11px 0px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    opacity: 0; /* Starta med att kortet är osynligt */
+    animation: fadeInCard 1.5s forwards; /* Lägg till animation */
+    animation-delay: calc(0.3s * var(--index));
+}
+
+/* Effekt vid hover */
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeInCard {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Liten förflyttning för att ge ett mer flytande intryck */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Slutlig position */
+    }
+}
+
+.portfolio-card {
+    animation-delay: calc(0.2s * (var(--index) - 1));
+}
+
+
+
+/* Innehåll i korten */
+.card-content {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 1rem;
+    color: white;
+}
+
+.card-competence {
+    font-size: 0.9rem;
+    color: #e0e0e0;
+}
+
+/* Länkar & knappar */
+.card-links {
+    margin-top: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.github-btn {
+    background: #24292e;
+    color: white;
+}
+
+.github-btn:hover {
+    background: #171a1d;
+    color: white;
+    transform: scale(1.05);
+}
+
+.live-demo-btn {
+    background: #007bff;
+    color: white;
+    margin-left: 10px;
+}
+
+.live-demo-btn:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+    color: white;
+}
+
+/* Responsivitet */
+@media (max-width: 768px) {
+    .portfolio-title {
+        font-size: 2rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.crud-container {
+    margin-top: 30px;
+}
