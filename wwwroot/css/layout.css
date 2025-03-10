@@ -1,10 +1,23 @@
-﻿nav {
-  background-color: #3C3C3C;
+﻿@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+nav, footer {
+  background: linear-gradient(358deg, #121212, #1e0030, #0a0442);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
 }
 
 .nav-item:hover {
   text-decoration: underline;
 }
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
 
 a.navbar-brand {
   white-space: normal;
@@ -45,8 +58,6 @@ button.accept-policy {
 .footer {
   width: 100%;
   line-height: 60px;
-  color: white;
-  text-align: center;
   padding: 20px;
   margin-top: auto;  /* Ser till att footern hålls längst ner */
 }

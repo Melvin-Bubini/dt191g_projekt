@@ -7,8 +7,9 @@
 }
 
 <h1 class="portfolio-title">Mina Projekt</h1>
-
 <div class="portfolio-grid">
+<div id="particles-js" class="particles-container"></div>
+
     @foreach (var item in Model)
     {
         <div class="portfolio-card">
@@ -27,15 +28,16 @@
                     }
                 </div>
                 <div class="crud-container">
-                    @await Html.PartialAsync("_CrudPartial", item) 
+                    @await Html.PartialAsync("_CrudPartial", item)
                 </div>
             </div>
         </div>
     }
 </div>
-
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="~/js/particles.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const cards = document.querySelectorAll('.portfolio-card');
         cards.forEach((card, index) => {
             card.style.setProperty('--index', index);

@@ -1,3 +1,13 @@
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
 .portfolio-title {
     text-align: center;
     background: linear-gradient(358deg, #512bd4 20%, #d600aa 80%);
@@ -35,7 +45,7 @@
 /* Effekt vid hover */
 .portfolio-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 14px 13px 11px 0px rgba(0, 0, 0, 0.4);
 }
 
 @keyframes fadeInCard {

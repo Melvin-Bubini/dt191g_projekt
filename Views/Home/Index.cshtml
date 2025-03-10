@@ -2,36 +2,39 @@
     ViewData["Title"] = "Startsida";
 
     <link rel="stylesheet" href="~/css/startPage.css" asp-append-version="true" />
-}
 
-<div class="container mt-5">
+}
+<div id="particles-js" class="particles-container"></div>
+<div class="container mt-5 scroll-animate">
     <div class="row align-items-center">
         <!-- Bildsektion -->
-        <div class="col-md-4 text-center">
-            <img src="~/pictures/profilePicture.jpg" alt="Profilbild" class="img-fluid rounded-circle shadow-lg" width="250">
+        <div class="col-md-4 text-center ">
+            <img src="~/pictures/profilePicture.jpg" alt="Profilbild" class="img-fluid rounded-circle shadow-lg"
+                width="250">
         </div>
 
         <!-- Introduktionstext -->
         <div class="col-md-8">
-            <h1 class="display-4 fade-in heading-text">Vem är jag?</h1>
+            <h1 class="display-4 fade-in heading-text ">Vem är jag?</h1>
             <p class="lead fade-in delay-1s">
                 Jag är social, service-driven och positiv, alltid strävandes efter personlig utveckling.
                 Engagemang och disciplin är något jag värderar högt och ser som en fördel inom webbutveckling.
             </p>
-            <p class="fade-in delay-2s">
+            <p class="lead fade-in delay-2s">
                 Från min utbildning har jag byggt en stark teknisk grund och lärt mig att arbeta effektivt i team.
                 Jag har goda kunskaper inom webbutveckling och lär mig snabbt nya teknologier och arbetsmetoder.
             </p>
-            <p class="fade-in delay-3s">
-                Genom min bakgrund som elit-handbollsspelare har jag utvecklat starka ledaregenskaper och en förmåga att prestera under press.
+            <p class="lead fade-in delay-3s">
+                Genom min bakgrund som elit-handbollsspelare har jag utvecklat starka ledaregenskaper och en förmåga att
+                prestera under press.
                 Jag tar gärna initiativ och driver projekt framåt, både självständigt och i samarbete med andra.
             </p>
         </div>
     </div>
 
     <!-- Sektion: Utbildning med kort -->
-    <section class="mt-5">
-        <h2 class="text-center mb-4 fade-in">Utbildning</h2>
+    <section class="mt-5 ">
+        <h2 class="text-center mb-4 fade-in ">Utbildning</h2>
         <div class="row text-center">
             <div class="col-md-4 mb-4">
                 <div class="card card-hover zoom-effect">
@@ -58,7 +61,8 @@
                     <div class="card-body">
                         <h4 class="card-title">Sjölins Gymnasium Södermalm</h4>
                         <p class="text-light">2019 – 2022</p>
-                        <strong class="card-text mt-2">Samhällsvetenskap inriktning beteendevetenskap med Nationell idrottsutbildning.</strong>
+                        <strong class="card-text mt-2">Samhällsvetenskap inriktning beteendevetenskap med Nationell
+                            idrottsutbildning.</strong>
                     </div>
                 </div>
             </div>
@@ -109,3 +113,22 @@
     </section>
 
 </div>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="~/js/particles.js"></script>
+<script>
+    // Enkel scroll animations funktion
+    document.addEventListener('DOMContentLoaded', function () {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Observera alla element med klassen 'scroll-animate'
+        document.querySelectorAll('.scroll-animate').forEach(element => {
+            observer.observe(element);
+        });
+    });
+</script>
