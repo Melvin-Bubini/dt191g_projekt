@@ -16,7 +16,19 @@
         <div class="row text-center mb-5">
             <div class="col-12">
                 <p class="lead text-white intro-text">Har du en spännande idé eller ett projekt? Jag är redo att skapa
-                    något fantastiskt tillsammans! Kontakta mig via något av alternativen nedan.</p>
+                    något fantastiskt tillsammans! Kontakta mig via något av alternativen nedan. <br>
+                    Ladda gärna ner mitt CV också!</p>
+            </div>
+        </div>
+
+        <!-- Länk för nedladdning av CV -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-6">
+                <div class=" text-center p-4 ">
+                    <button type="button" class="btn btn-primary w-100 submit-btn" id="downloadCvBtn">
+                        Ladda ner CV <i class="bi bi-download"></i>
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -73,19 +85,26 @@
             <div class="col-md-8">
                 <div class="form-container">
                     <h3 class="text-center mb-4">Skicka ett meddelande</h3>
-                    <form class="contact-form">
+                    <form id="contact-form" class="contact-form">
                         <div class="form-group mb-4">
-                            <input type="text" class="form-control" id="name" placeholder="Ditt namn" required>
+                            <input type="text" class="form-control" id="title" placeholder="Titel på meddelandet"
+                                name="title" required>
+                            <label for="title" class="form-label">Titel på meddelandet</label>
+                        </div>
+                        <div class="form-group mb-4">
+                            <input type="text" class="form-control" id="name" placeholder="Ditt namn" name="name"
+                                required>
                             <label for="name" class="form-label">Ditt namn</label>
                         </div>
                         <div class="form-group mb-4">
-                            <input type="email" class="form-control" id="email" placeholder="Din e-postadress" required>
-                            <label for="email" class="form-label">Din e-postadress</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Ditt meddelande"
+                                name="message" required></textarea>
+                            <label for="message" class="form-label">Ditt meddelande</label>
                         </div>
                         <div class="form-group mb-4">
-                            <textarea class="form-control" id="message" rows="4" placeholder="Ditt meddelande"
-                                required></textarea>
-                            <label for="message" class="form-label">Ditt meddelande</label>
+                            <input type="email" class="form-control" id="email" placeholder="Din e-postadress"
+                                name="email" required>
+                            <label for="email" class="form-label">Din e-postadress</label>
                         </div>
                         <button type="submit" class="btn btn-primary w-100 submit-btn">
                             <span>Skicka meddelande</span>
@@ -97,46 +116,4 @@
         </div>
     </div>
 </section>
-
-<script>
-    // Flotande animation på kontaktkort
-    const cards = document.querySelectorAll('.contact-card');
-    cards.forEach((card, index) => {
-        card.addEventListener('mousemove', function (e) {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            const midCardWidth = rect.width / 2;
-            const midCardHeight = rect.height / 2;
-
-            const angleY = (x - midCardWidth) / 8;
-            const angleX = (y - midCardHeight) / 8;
-
-            card.style.transform = `rotateX(${-angleX}deg) rotateY(${angleY}deg) translateZ(10px)`;
-        });
-
-        card.addEventListener('mouseleave', function () {
-            card.style.transform = 'rotateX(0) rotateY(0) translateZ(0)';
-        });
-    });
-
-    // Floating formeffekt
-    const formInputs = document.querySelectorAll('.form-control');
-    formInputs.forEach(input => {
-        input.addEventListener('focus', function () {
-            this.parentElement.classList.add('focused');
-        });
-
-        input.addEventListener('blur', function () {
-            if (this.value === '') {
-                this.parentElement.classList.remove('focused');
-            }
-        });
-
-        // Kolla om input har värde vid laddning
-        if (input.value !== '') {
-            input.parentElement.classList.add('focused');
-        }
-    });
-</script>
+<script src="~/js/contact.js" asp-append-version="true"></script>
