@@ -5,7 +5,6 @@ namespace dt191g_projekt.Controllers
 {
     public class ContactController : Controller
     {
-        // Visa kontaktformuläret
         public IActionResult Index()
         {
             return View();

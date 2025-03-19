@@ -81,12 +81,55 @@ h2 {
     }
 }
 
-/* Bootstrap-ikoner */
-.bi {
-    display: block;
-    margin-bottom: 10px;
-    color: #f8f9fa;
-    /* Ljus ikonfärg */
+/* Förbättrad knapp med neoneffekter */
+.submit-btn {
+    background: linear-gradient(45deg, #512bd4, #d600aa);
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 15px rgba(214, 0, 170, 0.5);
+    animation: buttonGlow 2s infinite alternate;
+    font-size: 1.1rem;
+}
+
+@keyframes buttonGlow {
+    from {
+        box-shadow: 0 0 15px rgba(214, 0, 170, 0.5);
+    }
+
+    to {
+        box-shadow: 0 0 30px rgba(214, 0, 170, 0.8), 0 0 50px rgba(81, 43, 212, 0.5);
+    }
+}
+
+.submit-btn:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 30px rgba(214, 0, 170, 0.6);
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent);
+    transition: 0.5s;
+}
+
+.submit-btn:hover::before {
+    left: 100%;
 }
 
 /* Tidslinje */
