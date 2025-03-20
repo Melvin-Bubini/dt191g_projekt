@@ -40,7 +40,7 @@ Detta är en webbapplikation byggd med ASP.NET Core MVC som fungerar som en pers
 
 ## Mappstruktur
 
-portfolio-website/
+dt191g_projekt/
 │-- Controllers/
 │   ├── HomeController.cs
 │   ├── ContactController.cs
