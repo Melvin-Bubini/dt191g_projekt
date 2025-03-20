@@ -34,15 +34,15 @@
     </div>
 
     <!-- Länk för nedladdning av CV -->
-        <div class="row justify-content-center mb-5">
-            <div class="col-md-6">
-                <div class=" text-center p-4 ">
-                    <button type="button" class="btn btn-primary w-100 submit-btn" id="downloadCvBtn">
-                        Ladda ner CV <i class="bi bi-download"></i>
-                    </button>
-                </div>
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-6">
+            <div class=" text-center p-4 ">
+                <button type="button" class="btn btn-primary w-100 submit-btn" id="downloadCvBtn">
+                    Ladda ner CV <i class="bi bi-download"></i>
+                </button>
             </div>
         </div>
+    </div>
 
     <!-- Sektion: Utbildning med kort -->
     <section class="mt-5 ">
@@ -142,5 +142,14 @@
         document.querySelectorAll('.scroll-animate').forEach(element => {
             observer.observe(element);
         });
+    });
+
+    // Lägg till en event listener för knappen
+    document.getElementById('downloadCvBtn').addEventListener('click', function () {
+        // Skapa en osynlig länk för nedladdningen
+        var link = document.createElement('a');
+        link.href = '/CV-2025.pdf'; // Länken till din PDF
+        link.download = 'Melvin-Bubini-CV.pdf'; // Namnet på den nedladdade filen
+        link.click(); // Simulera ett klick för att starta nedladdningen
     });
 </script>
